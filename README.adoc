@@ -1,0 +1,74 @@
+= Sistema de Votación − 2021
+Perez Giannina <gianniperez2001@gmail.com>; Prieto Lucas <lucasprieto30@gmail.com>
+v1, {docdate}. Docente Martha Semken (COM-02)
+:title-page:
+:numbered:
+:source-highlighter: coderay
+:tabsize: 4
+
+== Introducción
+
+Simulación de un sistema de votación en Java, realizada con programación orientada a objetos y JUnit4. Se aplicaron los conceptos de diagrama de clases, estructuras de datos, IREP, herencia y tests, entre otros.
+
+== Implementación
+
+Este proyecto está dividido en:
+
+*Estructuras:* Estructuras de datos utilizadas en el código. Esta carpeta contiene los archivos `Conjunto.java` y `Tupla.java`.
+
+*Main:* Archivos de prueba. Esta carpeta contiene los archivos `Cliente.java` y `Fixture.java` para realizar una prueba por consola, y `SistemaDeTurnosTest.java` posee los tests de JUnit correspondientes a `SistemaDeTurnos.java`.
+
+*Sistema:* Objetos. Esta carpeta contiene la mayor parte del código en los archivos `Mesa.java`, `MesaEnfermos.java`, `MesaGeneral.java`, `MesaMayores.java`, `MesaTrabajadores.java`, `Votante.java` y `SistemaDeTurnos.java`.
+
+*Diagrama de Clases:* Imagen `.png` que contiene el diagrama de clases.
+
+== IREP y Estructuras de Datos
+
+=== Sistema De Turnos
+
+*IREP:* No hay mesas con número repetido, no puede haber dos votantes registrados con el mismo
+dni. No puede haber más turnos asignados que votantes registrados. Las mesas no tienen presidente
+en común.
+
+*Estructuras de datos:*
+
+- *votantes (Hashtable):* Permite la búsqueda del Votante en O(1), no hay
+repetidos, no tiene tamaño definido.
+
+- *turnosAsignados (LinkedList):* No tiene tamaño definido.
+
+- *votantesQueVotaron (Hashtable):* A partir del DNI se obtiene al Votante, no hay repetidos, no tiene
+tamaño definido.
+
+- *mesas (Conjunto):* No tiene tamaño definido, no se repiten, no hay orden, son del mismo tipo.
+
+=== Votante
+
+*IREP:* un solo turno (solo puede votar en una mesa), puede ser presidente solo de una mesa.
+
+*Estructuras de datos:*
+
+- *turno (Tupla):* Permite conocer el número de mesa y el horario a la vez.
+
+=== Mesa
+
+*IREP:* horaInicial tiene que ser menor a horaFinal. Tipo solo puede ser “Enf_Preex”, “Trabajador”,
+“Mayor65” o “General”. En el registro de votantes no puede haber dos votantes registrados con el
+mismo dni.
+
+*Estructura de datos:*
+
+- *votantesAsignados (Hashtable):* A partir del DNI se obtiene al Votante, no hay
+repetidos, no tiene tamaño definido.
+
+=== Mesa Enfermos
+
+*IREP:* Los turnos asignados no deben ser mayor a la cantidad de cupos.
+
+=== Mesa Mayores
+
+*IREP:* Los turnos asignados no deben ser mayor a la cantidad de cupos.
+
+=== Mesa General
+
+*IREP:* Los turnos asignados no deben ser mayor a la cantidad de cupos.
