@@ -1,10 +1,4 @@
 = Sistema de Votación − 2021
-Perez Giannina <gianniperez2001@gmail.com>; Prieto Lucas <lucasprieto30@gmail.com>
-v1, {docdate}. Docente Martha Semken (COM-02)
-:title-page:
-:numbered:
-:source-highlighter: coderay
-:tabsize: 4
 
 == Introducción
 
